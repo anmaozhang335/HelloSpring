@@ -73,6 +73,7 @@ public class ShopListController {
     }
 
     @RequestMapping(value = "/listshops", method = RequestMethod.GET)
+    @ResponseBody
     private Map<String, Object> listShops(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         int pageIndex = HttpServletRequestUtil.getInt(request, "pageIndex");
