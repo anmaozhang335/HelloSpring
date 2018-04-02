@@ -1,0 +1,10 @@
+com/zam/o2o/entity/Product.class
+com/zam/o2o/entity/ProductCategory.class
+com/zam/o2o/entity/PersonInfo.class
+com/zam/o2o/entity/Shop.class
+com/zam/o2o/entity/ProductImg.class
+com/zam/o2o/entity/Area.class
+com/zam/o2o/entity/ShopCategory.class
+com/zam/o2o/entity/HeadLine.class
+com/zam/o2o/entity/WechatAuth.class
+com/zam/o2o/entity/LocalAuth.class
