@@ -74,7 +74,7 @@ $(function(){
 			var html='';
 			//遍历店铺列表，拼接出卡片集合
 			data.shopList.map(function(item, index){
-				html =+ '' + '<div class="card" data-shop-id="'
+				html += '' + '<div class="card" data-shop-id="'
 				+ item.shopId + '">' + '<div class="card-header">'
 				+ item.shopName + '</div>'
 				+ '<div class="card-content">'
@@ -155,7 +155,7 @@ $(function(){
 	});
 	
 	//需要查询的店铺名字发生变化后，重置页码，清空原先的店铺列表，按照新的名字去查询
-	$('#search').on('change', function(e){
+	$('#search').on('input', function(e){
 		shopName = e.target.value;
 		$('.list-div').empty();
 		pageNum = 1;
