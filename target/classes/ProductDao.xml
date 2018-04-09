@@ -11,6 +11,7 @@
 		<result column="normal_price" property="normalPrice" />
 		<result column="promotion_price" property="promotionPrice" />
 		<result column="priority" property="priority" />
+		<result column="point" property="point"/>
 		<result column="create_time" property="createTime" />
 		<result column="last_edit_time" property="lastEditTime" />
 		<result column="enable_status" property="enableStatus" />
@@ -46,6 +47,7 @@
 		p.normal_price,
 		p.promotion_price,
 		p.priority,
+		p.point,
 		p.create_time,
 		p.last_edit_time,
 		p.enable_status,
@@ -76,6 +78,7 @@
 		normal_price,
 		promotion_price,
 		priority,
+		point,
 		create_time,
 		last_edit_time,
 		enable_status,
@@ -137,6 +140,7 @@
 			<if test="priority != null">priority=#{priority},</if>
 			<if test="lastEditTime != null">last_edit_time=#{lastEditTime},</if>
 			<if test="enableStatus != null">enable_status=#{enableStatus},</if>
+			<if test="point!=mill">point=#{point},</if>
 			<if
 				test="productCategory != null and productCategory.productCategoryId!=null">
 				product_category_id=#{productCategory.productCategoryId}
@@ -149,12 +153,12 @@
 		useGeneratedKeys="true" keyProperty="productId" keyColumn="product_id">
 		INSERT INTO
 		tb_product(product_name,product_desc,img_addr,normal_price,promotion_price,
-		priority,create_time,last_edit_time,enable_status,product_category_id,shop_id
+		priority,point,create_time,last_edit_time,enable_status,product_category_id,shop_id
 		)
 		VALUES(
 		#{productName}, #{productDesc}, #{imgAddr}, #{normalPrice},
 		#{promotionPrice},
-		#{priority}, #{createTime}, #{lastEditTime},
+		#{priority}, #{point}, #{createTime}, #{lastEditTime},
 		#{enableStatus},
 		#{productCategory.productCategoryId},
 		#{shop.shopId})

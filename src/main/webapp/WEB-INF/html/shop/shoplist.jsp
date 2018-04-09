@@ -21,33 +21,33 @@
 	<h1 class="title">商店列表</h1>
 	</header>
 	<div class="content">
-		<p>
-			你好，<span id="user-name"></span><a class="pull-right"
-				href="/o2o/shopadmin/shopoperation">增加店铺</a>
-		</p>
-		<div class="row row-shop">
-			<div class="col-40">商店名称</div>
-			<div class="col-40">状态</div>
-			<div class="col-20">操作</div>
+		<div class="content-block">
+			<p>
+				你好,<span id="user-name"></span><a class="pull-right"
+					href="/o2o/shopadmin/shopoperation">增加店铺</a>
+			</p>
+			<div class="row row-shop">
+				<div class="col-40">商店名称</div>
+				<div class="col-40">状态</div>
+				<div class="col-20">操作</div>
+			</div>
+			<div class="shop-wrap"></div>
 		</div>
-		<div class="shop-wrap"></div>
-	</div>
-	<div class="content-black">
-		<div class="row">
-			<div class="col-33">
-				<a href="/o2o/local/accountbind?usertype=2"
-					class="button-button-big button-fill button-success">账号绑定</a>
-
-			</div>
-			<div class="col-33">
-				<a href="#" id="log-out" usertype="2"
-					class="button-button-big button-fill button-danger">账号绑定</a>
-
-			</div>
-			<div class="col-33">
-				<a href="/o2o/local/changepsw?usertype=2"
-					class="button-button-big button-fill button-success"
-					id="bindOrChange">修改密码</a>
+		<div class="content-block">
+			<div class="row">
+				<div class="col-33">
+					<a href="/o2o/local/accountbind?usertype=2"
+						class="button button-big button-fill button-success">帐号绑定</a>
+				</div>
+				<div class="col-33">
+					<a href="#" id="log-out" usertype="2"
+						class="button button-big button-fill button-danger">退出系统</a>
+				</div>
+				<div class="col-33">
+					<a href="/o2o/local/changepsw?usertype=2"
+						class="button button-big button-fill button-success"
+						id="bindOrChange">修改密码</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -59,7 +59,7 @@
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript' src='../resources/js/shop/shoplist.js'
 		charset='utf-8'></script>
-	<!-- <script type='text/javascript' src='../resources/js/local/logout.js'
-		charset='utf-8'></script> -->
+	<script type='text/javascript' src='../resources/js/local/logout.js'
+		charset='utf-8'></script>
 </body>
 </html>

@@ -18,6 +18,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zam.o2o.common.Common;
 import com.zam.o2o.dto.ImageHolder;
 import com.zam.o2o.dto.ShopExecution;
 import com.zam.o2o.entity.Area;
@@ -72,16 +73,18 @@ public class ShopManagermentController {
     @ResponseBody
     private Map<String, Object> getShopList(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
-        PersonInfo user = new PersonInfo();
-        user.setUserId(1L);
-        user.setName("Anmao Zhang");
-        request.getSession().setAttribute("user", user);
+        PersonInfo user = null;
+//        PersonInfo user = new PersonInfo();
+//        user.setUserId(1L);
+//        user.setName("Anmao Zhang");
+//        request.getSession().setAttribute("user", user);
         user = (PersonInfo) request.getSession().getAttribute("user");
         try {
             Shop shopCondition = new Shop();
             shopCondition.setOwner(user);
             ShopExecution se = shopService.getShopList(shopCondition, 0, 100);
-            modelMap.put("shopList", se.getShopList());
+            modelMap.put(Common.SHOPLIST, se.getShopList());
+            request.getSession().setAttribute(Common.SHOPLIST, se.getShopList());
             modelMap.put("user", user);
             modelMap.put(SUCCESS, true);
 
@@ -181,12 +184,13 @@ public class ShopManagermentController {
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
                     // 该用户可以操作的店铺列表
-                    List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
+                    @SuppressWarnings("unchecked")
+                    List<Shop> shopList = (List<Shop>) request.getSession().getAttribute(Common.SHOPLIST);
                     if (shopList == null || shopList.size() == 0) {
                         shopList = new ArrayList<>();
                     }
                     shopList.add(se.getShop());
-                    request.getSession().setAttribute("shopList", shopList);
+                    request.getSession().setAttribute(Common.SHOPLIST, shopList);
                 } else {
                     modelMap.put("success", false);
                     modelMap.put("errMsg", se.getStateInfo());

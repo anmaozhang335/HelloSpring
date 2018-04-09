@@ -3,9 +3,13 @@ package com.zam.o2o.entity;
 import java.util.Date;
 
 public class WechatAuth {
+    //主键id
 	private Long wechatAuthId;
+	//微信获取用户信息的凭证，对于某个公众号具有唯一性
 	private String openId;
+	
 	private Date createTime;
+	//用户信息
 	private PersonInfo personInfo;
 
 	public Long getWechatAuthId() {

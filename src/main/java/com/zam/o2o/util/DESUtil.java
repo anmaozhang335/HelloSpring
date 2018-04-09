@@ -79,6 +79,8 @@ public class DESUtil {
     }
     
     public static void main(String[] args) {
+        System.out.println(getEncryptString("zam"));
+        System.out.println(getEncryptString("zamZAM!@#19861113"));
         System.out.println(getEncryptString("root"));
         System.out.println(getEncryptString("zam19861113"));
     }
